@@ -16,10 +16,20 @@ const userSchema = new Schema(
     password: {
       type: String,
       minlength: 6,
+      maxLength: 10,
       required: [true, "Password is required"],
+    },
+    city: {
+      type: String,
+      required: [true, "City is required"],
+    },
+    phone: {
+      type: String,
+      required: [true, "Phone is required"],
     },
     avatarURL: {
       type: String,
+      default: null,
     },
     token: {
       type: String,
@@ -35,6 +45,8 @@ const registerSchema = Joi.object({
   name: Joi.string().required(),
   email: Joi.string().required(),
   password: Joi.string().min(6).required(),
+  city: Joi.string().required(),
+  phone: Joi.string().required(),
 });
 
 const loginSchema = Joi.object({
