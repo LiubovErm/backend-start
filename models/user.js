@@ -16,7 +16,6 @@ const userSchema = new Schema(
     password: {
       type: String,
       minlength: 6,
-      maxLength: 10,
       required: [true, "Password is required"],
     },
     city: {
