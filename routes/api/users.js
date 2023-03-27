@@ -11,15 +11,10 @@ router.post(
   ctrlWrapper(ctrl.register)
 );
 
-router.post(
-  "/login",
-  validation(schemas.loginSchema),
-  ctrlWrapper(ctrl.login)
-);
+router.post("/login", validation(schemas.loginSchema), ctrlWrapper(ctrl.login));
 
-router.post(
-  "/logout",
-  auth,
-  ctrlWrapper(ctrl.logout));
+router.post("/logout", auth, ctrlWrapper(ctrl.logout));
+
+router.patch("/update", auth, ctrlWrapper(ctrl.update));
 
 module.exports = router;
