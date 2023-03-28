@@ -17,4 +17,6 @@ router.post("/logout", auth, ctrlWrapper(ctrl.logout));
 
 router.patch("/update", auth, ctrlWrapper(ctrl.update));
 
+router.post("/jwtrefresh", auth, ctrlWrapper(ctrl.refreshTocken));
+
 module.exports = router;
